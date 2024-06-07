@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="{% static 'css/home/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1 class='name'>hello{{ name }}</h1>
+
+    {% if age > 20 %}
+        <h3>bigger than 20</h3>
+        {%else%}
+        <h3>lower than 20</h3>
+    {%endif%}
+
+
+    <a href="http://127.0.0.1:8000/account/login"> Login Page </a>
+
+    <div>
+        <img src="{% static 'img/a.jpg' %}">
+    </div>
+
+    <div>
+        {% for s in students %}
+            <h3>{{s}}</h3>
+        {% endfor %}
+    </div>
+
+    <script src={% static 'js/script.js' %}></script>
+</body>
+</html>
